@@ -18,8 +18,9 @@ public class Usuario {
         return postagens;
     }
 
-    public void setPostagens(List<Postagem> postagens) {
-        this.postagens = postagens;
+
+    public void addPostagem(Postagem postagem) {
+        this.postagens.add(postagem);
     }
 
     public Long getId() {
