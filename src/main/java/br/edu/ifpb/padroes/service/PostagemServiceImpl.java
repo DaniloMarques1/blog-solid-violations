@@ -7,7 +7,11 @@ import java.util.Date;
 
 public abstract class PostagemServiceImpl implements PostagemService {
 
-    private PostagemDAO postagemDAO = new PostagemDAO("banco.db");
+    private PostagemDAO postagemDAO;
+
+    public PostagemServiceImpl(PostagemDAO postagemDAO) {
+        this.postagemDAO = postagemDAO;
+    }
 
     @Override
     public void adicionarPostagem(Postagem postagem) {

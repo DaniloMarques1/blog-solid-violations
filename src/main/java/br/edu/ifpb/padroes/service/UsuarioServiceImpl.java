@@ -6,7 +6,13 @@ import java.util.List;
 
 public class UsuarioServiceImpl implements UsuarioService {
 
-    private UsuarioDAO usuarioDAO = new UsuarioDAO("banco.db");
+    private UsuarioDAO usuarioDAO;
+
+    // qualquer tipo que implemente a interface
+    // UsuarioDAO pode ser passado aqui
+    public UsuarioServiceImpl(UsuarioDAO usuarioDAO) {
+        this.usuarioDAO = usuarioDAO;
+    }
 
     @Override
     public void criarUsuario(Usuario usuario) {
